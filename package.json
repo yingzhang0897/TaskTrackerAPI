@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/yingzhang0897/TaskTrackerAPI/issues"
   },
-  "homepage": "https://github.com/yingzhang0897/TaskTrackerAPI#readme"
+  "homepage": "https://github.com/yingzhang0897/TaskTrackerAPI#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
