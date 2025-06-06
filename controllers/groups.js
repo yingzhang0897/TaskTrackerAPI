@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllGroups = async (req, res) => {
   try {
-    const result = await mongodb.getDb().db().collection('groups').find().toArray();
+    const result = await mongodb.getDb().collection('groups').find().toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (err) {
@@ -19,7 +19,6 @@ const getSingleGroup = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()
-      .db()
       .collection('groups')
       .findOne({ _id: groupId });
     if (!result) {
@@ -39,7 +38,7 @@ const createGroup = async (req, res) => {
   };
 
   try {
-    const response = await mongodb.getDb().db().collection('groups').insertOne(group);
+    const response = await mongodb.getDb().collection('groups').insertOne(group);
 
     if (response.acknowledged) {
       res.status(201).json(response);
@@ -64,7 +63,6 @@ const updateGroup = async (req, res) => {
   try {
     const response = await mongodb
       .getDb()
-      .db()
       .collection('groups')
       .replaceOne({ _id: groupId }, group);
 
@@ -84,7 +82,7 @@ const deleteGroup = async (req, res) => {
   }
   const groupId = new ObjectId(req.params.id);
   try {
-    const response = await mongodb.getDb().db().collection('groups').deleteOne({ _id: groupId });
+    const response = await mongodb.getDb().collection('groups').deleteOne({ _id: groupId });
 
     if (response.deletedCount > 0) {
       res.status(204).send();

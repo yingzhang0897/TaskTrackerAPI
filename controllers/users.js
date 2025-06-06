@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllUsers = async (req, res) => {
   try {
-    const result = await mongodb.getDb().db().collection('users').find().toArray();
+    const result = await mongodb.getDb().collection('users').find().toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
   } catch (err) {
@@ -19,7 +19,6 @@ const getSingleUser = async (req, res) => {
   try {
     const result = await mongodb
       .getDb()
-      .db()
       .collection('users')
       .findOne({ _id: userId });
     if (!result) {
@@ -41,7 +40,7 @@ const createUser = async (req, res) => {
   };
 
   try {
-    const response = await mongodb.getDb().db().collection('users').insertOne(user);
+    const response = await mongodb.getDb().collection('users').insertOne(user);
 
     if (response.acknowledged) {
       res.status(201).json(response);
@@ -68,7 +67,6 @@ const updateUser = async (req, res) => {
   try {
     const response = await mongodb
       .getDb()
-      .db()
       .collection('users')
       .replaceOne({ _id: userId }, user);
 
@@ -88,7 +86,7 @@ const deleteUser = async (req, res) => {
   }
   const userId = new ObjectId(req.params.id);
   try {
-    const response = await mongodb.getDb().db().collection('users').deleteOne({ _id: userId });
+    const response = await mongodb.getDb().collection('users').deleteOne({ _id: userId });
 
     if (response.deletedCount > 0) {
       res.status(204).send();
