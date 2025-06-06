@@ -24,7 +24,7 @@ const saveUser = (req, res, next) => {
 const saveGroup = (req, res, next) => {
   const validationRule = {
     name: 'required|string',
-    members:'required|objectIdArray',
+    members:'sometimes|objectIdArray',
     createdBy: 'required|string',
     createdAt: 'required| date'
   };
