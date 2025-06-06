@@ -33,7 +33,7 @@ const getSingleUser = async (req, res) => {
 
 const createUser = async (req, res) => {
   const user = {
-    username: req.body.name,
+    username: req.body.username,
     email: req.body.email,
     fullName: req.body.fullName,
     role: req.body.role,
@@ -59,7 +59,7 @@ const updateUser = async (req, res) => {
   }
   const userId = new ObjectId(req.params.id);
   const user = {
-    username: req.body.name,
+    username: req.body.username,
     email: req.body.email,
     fullName: req.body.fullName,
     role: req.body.role,
