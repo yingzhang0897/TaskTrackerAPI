@@ -2,10 +2,11 @@ const validator = require('../helpers/validate');
 
 const saveUser = (req, res, next) => {
   const validationRule = {
-    name: 'required|string',
+    username: 'required|string',
     email: 'required|email',
-    gender: 'required|in:male,female',
-    age: 'numeric|min:3|max:100',
+    fullName: 'required|string',
+    role: 'required|string',
+    groupId: 'required|mongoId',
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -23,7 +24,10 @@ const saveUser = (req, res, next) => {
 const saveGroup = (req, res, next) => {
   const validationRule = {
     name: 'required|string',
-    limit_num: 'required|integer|min:1|max:10',
+    description: 'required|string',
+    members:'required|objectIdArray',
+    createdBy: 'required|string',
+    createdAt: 'required| date'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
