@@ -34,7 +34,9 @@ const getSingleGroup = async (req, res) => {
 const createGroup = async (req, res) => {
   const group = {
     name: req.body.name,
-    limit_num: req.body.limit_num,
+    members: req.body.members,
+    createdBy: req.body.createdBy,
+    createdAt: req.body.createdAt
   };
 
   try {
@@ -57,7 +59,9 @@ const updateGroup = async (req, res) => {
   const groupId = new ObjectId(req.params.id);
   const group = {
     name: req.body.name,
-    limit_num: req.body.limit_num,
+    members: req.body.members,
+    createdBy: req.body.createdBy,
+    createdAt: req.body.createdAt
   };
 
   try {
