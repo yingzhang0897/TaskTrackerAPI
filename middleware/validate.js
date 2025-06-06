@@ -6,7 +6,7 @@ const saveUser = (req, res, next) => {
     email: 'required|email',
     fullName: 'required|string',
     role: 'required|string',
-    groupId: 'required|mongoId',
+    groupId: 'sometimes|mongoId',
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -24,7 +24,6 @@ const saveUser = (req, res, next) => {
 const saveGroup = (req, res, next) => {
   const validationRule = {
     name: 'required|string',
-    description: 'required|string',
     members:'required|objectIdArray',
     createdBy: 'required|string',
     createdAt: 'required| date'
