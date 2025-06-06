@@ -5,10 +5,9 @@
     "description": "TaskTracker API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "tasktrackerapi-7nfh.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
