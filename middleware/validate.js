@@ -26,7 +26,7 @@ const saveGroup = (req, res, next) => {
     name: 'required|string',
     members:'sometimes|objectIdArray',
     createdBy: 'required|string',
-    createdAt: 'required| date'
+    createdAt: 'required|date'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
