@@ -41,7 +41,51 @@ const saveGroup = (req, res, next) => {
   });
 };
 
+const saveTask = (req, res, next) => {
+  const validationRule = {
+    name: 'required|string',
+    status:'required|string',
+    createdBy: 'required|string',
+    createdAt: 'required|date',
+    finishDate: 'string',
+    goalId: 'mongoId',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+        return res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+const saveGoal = (req, res, next) => {
+  const validationRule = {
+    name: 'required|string',
+    status:'required|string',
+    createdBy: 'required|string',
+    createdAt: 'required|date',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+        return res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
   saveUser,
-  saveGroup
+  saveGroup,
+  saveTask,
+  saveGoal
 };
