@@ -54,20 +54,20 @@ const getTaskByStatus = async (req, res) => {
   }
 };
 
-const getTaskByFinishDate = async (req, res) => {
-  const finishDate = req.params.finishDate;
-  if (!finishDate) {
-    return res.status(400).json('finishDate parameter is required.');
+const getTaskByDueDate = async (req, res) => {
+  const dueDate = req.params.dueDate;
+  if (!dueDate) {
+    return res.status(400).json('Due Date parameter is required.');
   }
   try {
     const result = await mongodb
       .getDb()
       .collection('tasks')
-      .find({ finishDate: finishDate })
+      .find({ dueDate: dueDate })
       .toArray();
       
     if (result.length === 0) {
-      return res.status(404).json({ message: 'No tasks found with the given finishDate.' });
+      return res.status(404).json({ message: 'No tasks found with the given dueDate.' });
     }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
@@ -78,9 +78,14 @@ const getTaskByFinishDate = async (req, res) => {
 
 const createTask = async (req, res) => {
   const task = {
-    name: req.body.name,
-    members: req.body.members,
+    title: req.name.title,
+    description: req.body.description,
+    status: req.body.status,
+    priority: req.body.priority,
+    dueDate: req.body.dueDate,
+    assingedTo: req.body.assingedTo,
     createdBy: req.body.createdBy,
+    goalID: req.body.goalID,
     createdAt: req.body.createdAt
   };
 
@@ -103,9 +108,14 @@ const updateTask = async (req, res) => {
   }
   const taskId = new ObjectId(req.params.id);
   const task = {
-    name: req.body.name,
-    members: req.body.members,
+    title: req.name.title,
+    description: req.body.description,
+    status: req.body.status,
+    priority: req.body.priority,
+    dueDate: req.body.dueDate,
+    assingedTo: req.body.assingedTo,
     createdBy: req.body.createdBy,
+    goalID: req.body.goalID,
     createdAt: req.body.createdAt
   };
 
@@ -147,7 +157,7 @@ module.exports = {
   getAllTasks,
   getSingleTask,
   getTaskByStatus,
-  getTaskByFinishDate,
+  getTaskByDueDate,
   createTask,
   updateTask,
   deleteTask

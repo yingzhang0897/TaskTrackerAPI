@@ -55,10 +55,14 @@ const getGoalByStatus = async (req, res) => {
 
 const createGoal = async (req, res) => {
   const goal = {
-    name: req.body.name,
-    members: req.body.members,
+    title: req.name.title,
+    description: req.body.description,
+    status: req.body.status,
+    groupId: req.body.groupId,
+    taskIds: req.body.taskIds,
     createdBy: req.body.createdBy,
-    createdAt: req.body.createdAt
+    createdAt: req.body.createdAt,
+    dueDate: req.bosy.createdAt
   };
 
   try {
@@ -80,10 +84,14 @@ const updateGoal = async (req, res) => {
   }
   const goalId = new ObjectId(req.params.id);
   const goal = {
-    name: req.body.name,
-    members: req.body.members,
+    title: req.name.title,
+    description: req.body.description,
+    status: req.body.status,
+    groupId: req.body.groupId,
+    taskIds: req.body.taskIds,
     createdBy: req.body.createdBy,
-    createdAt: req.body.createdAt
+    createdAt: req.body.createdAt,
+    dueDate: req.bosy.createdAt
   };
 
   try {
