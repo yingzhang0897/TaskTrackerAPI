@@ -22,7 +22,7 @@ router.get('/:status',
 
 router.get('/:finishDate',
   // #swagger.tags = ['Tasks']
-  tasksController.getTaskByfinishDate
+  tasksController.getTaskByDueDate
 );
 
 router.post('/',
