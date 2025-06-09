@@ -10,17 +10,17 @@ router.get('/',
   tasksController.getAllTasks
 );
 
-router.get('/:id',
+router.get('/id/:id',
   // #swagger.tags = ['Tasks']
   tasksController.getSingleTask
 );
 
-router.get('/:status',
+router.get('/status/:status',
   // #swagger.tags = ['Tasks']
   tasksController.getTaskByStatus
 );
 
-router.get('/:finishDate',
+router.get('/due/:dueDate',
   // #swagger.tags = ['Tasks']
   tasksController.getTaskByDueDate
 );

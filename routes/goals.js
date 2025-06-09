@@ -10,12 +10,12 @@ router.get('/',
   goalsController.getAllGoals
 );
 
-router.get('/:id',
+router.get('/id/:id',
   // #swagger.tags = ['Goals']
   goalsController.getSingleGoal
 );
 
-router.get('/:status',
+router.get('/status/:status',
   // #swagger.tags = ['Goals']
   goalsController.getGoalByStatus
 );
