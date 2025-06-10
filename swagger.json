@@ -386,6 +386,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "title": {
+                  "example": "any"
+                },
                 "description": {
                   "example": "any"
                 },
@@ -536,6 +539,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "title": {
+                  "example": "any"
+                },
                 "description": {
                   "example": "any"
                 },
@@ -641,6 +647,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "title": {
+                  "example": "any"
+                },
                 "description": {
                   "example": "any"
                 },
@@ -755,6 +764,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "title": {
+                  "example": "any"
+                },
                 "description": {
                   "example": "any"
                 },
