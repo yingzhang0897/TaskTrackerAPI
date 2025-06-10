@@ -3,10 +3,14 @@ const passport = require("passport");
 
 const users = require('./users');
 const groups = require('./groups');
+const tasks = require('./tasks');
+const goals = require('./goals');
 
 router.use('/', require('./swagger'));
 router.use('/users', users);
 router.use('/groups', groups);
+router.use('/tasks', tasks);
+router.use('/goals', goals);
 
 router.get('/login', passport.authenticate('github'), (req, res)=>{})
 
