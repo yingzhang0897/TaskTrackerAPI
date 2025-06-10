@@ -667,6 +667,9 @@
                 },
                 "createdAt": {
                   "example": "any"
+                },
+                "dueDate": {
+                  "example": "any"
                 }
               }
             }
@@ -783,6 +786,9 @@
                   "example": "any"
                 },
                 "createdAt": {
+                  "example": "any"
+                },
+                "dueDate": {
                   "example": "any"
                 }
               }

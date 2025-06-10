@@ -62,7 +62,7 @@ const createGoal = async (req, res) => {
     taskIds: req.body.taskIds,
     createdBy: req.body.createdBy,
     createdAt: new Date(req.body.createdAt),
-    dueDate: new Date(req.body.createdAt)
+    dueDate: new Date(req.body.dueDate)
   };
 
   try {
@@ -91,7 +91,7 @@ const updateGoal = async (req, res) => {
     taskIds: req.body.taskIds,
     createdBy: req.body.createdBy,
     createdAt: new Date(req.body.createdAt),
-    dueDate: new Date(req.bosy.createdAt)
+    dueDate: new Date(req.body.dueDate)
   };
 
   try {
