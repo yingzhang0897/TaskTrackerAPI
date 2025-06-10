@@ -82,11 +82,11 @@ const createTask = async (req, res) => {
     description: req.body.description,
     status: req.body.status,
     priority: req.body.priority,
-    dueDate: req.body.dueDate,
+    dueDate: new Date(req.body.dueDate),
     assignedTo: req.body.assignedTo,
     createdBy: req.body.createdBy,
     goalID: req.body.goalID,
-    createdAt: req.body.createdAt
+    createdAt: new Date(req.body.createdAt)
   };
 
   try {
@@ -112,11 +112,11 @@ const updateTask = async (req, res) => {
     description: req.body.description,
     status: req.body.status,
     priority: req.body.priority,
-    dueDate: req.body.dueDate,
+    dueDate: new Date(req.body.dueDate),
     assignedTo: req.body.assignedTo,
     createdBy: req.body.createdBy,
     goalID: req.body.goalID,
-    createdAt: req.body.createdAt
+    createdAt: new Date(req.body.createdAt)
   };
 
   try {
