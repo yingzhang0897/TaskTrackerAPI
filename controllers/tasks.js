@@ -55,7 +55,7 @@ const getTaskByStatus = async (req, res) => {
 };
 
 const getTaskByDueDate = async (req, res) => {
-  const dueDate = req.params.dueDate;
+  const dueDate = new Date(decodeURIComponent(req.params.dueDate));
   if (!dueDate) {
     return res.status(400).json('Due Date parameter is required.');
   }
