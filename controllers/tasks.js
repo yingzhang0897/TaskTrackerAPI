@@ -83,7 +83,7 @@ const createTask = async (req, res) => {
     status: req.body.status,
     priority: req.body.priority,
     dueDate: req.body.dueDate,
-    assingedTo: req.body.assingedTo,
+    assignedTo: req.body.assignedTo,
     createdBy: req.body.createdBy,
     goalID: req.body.goalID,
     createdAt: req.body.createdAt
@@ -113,7 +113,7 @@ const updateTask = async (req, res) => {
     status: req.body.status,
     priority: req.body.priority,
     dueDate: req.body.dueDate,
-    assingedTo: req.body.assingedTo,
+    assignedTo: req.body.assignedTo,
     createdBy: req.body.createdBy,
     goalID: req.body.goalID,
     createdAt: req.body.createdAt
