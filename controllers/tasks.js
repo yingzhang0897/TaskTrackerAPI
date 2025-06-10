@@ -78,7 +78,7 @@ const getTaskByDueDate = async (req, res) => {
 
 const createTask = async (req, res) => {
   const task = {
-    title: req.name.title,
+    title: req.body.title,
     description: req.body.description,
     status: req.body.status,
     priority: req.body.priority,
@@ -108,7 +108,7 @@ const updateTask = async (req, res) => {
   }
   const taskId = new ObjectId(req.params.id);
   const task = {
-    title: req.name.title,
+    title: req.body.title,
     description: req.body.description,
     status: req.body.status,
     priority: req.body.priority,
