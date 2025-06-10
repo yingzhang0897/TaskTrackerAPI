@@ -401,7 +401,7 @@
                 "dueDate": {
                   "example": "any"
                 },
-                "assingedTo": {
+                "assignedTo": {
                   "example": "any"
                 },
                 "createdBy": {
@@ -554,7 +554,7 @@
                 "dueDate": {
                   "example": "any"
                 },
-                "assingedTo": {
+                "assignedTo": {
                   "example": "any"
                 },
                 "createdBy": {
