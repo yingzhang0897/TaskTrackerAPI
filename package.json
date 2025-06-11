@@ -4,7 +4,7 @@
   "description": "perform CRUD operations，API documentation and authentication",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js",
     "swagger": "node ./swagger.js"
   },
@@ -33,6 +33,8 @@
     "validatorjs": "^3.22.1"
   },
   "devDependencies": {
-    "swagger-autogen": "^2.23.7"
+    "chai": "^4.3.x",
+    "chai-http": "^4.3.x",
+    "mocha": "^10.x"
   }
 }

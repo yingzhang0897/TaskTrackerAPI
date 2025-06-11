@@ -11,6 +11,8 @@ const app = express();
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+app.use('/api/tasks', require('./routes/tasks'));
+
 
 app
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
@@ -74,3 +76,5 @@ mongodb.initDb((err) => {
         app.listen(port,() => {console.log(`Databse is listening and Node Running on port ${port}`)});
     }
 });
+
+module.exports = app;
