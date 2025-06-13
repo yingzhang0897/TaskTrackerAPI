@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest --watch --coverage",
+    "clean:test": "rimraf coverage jest-cache node_modules/.cache",
     "start": "node server.js",
     "swagger": "node ./swagger.js"
   },
