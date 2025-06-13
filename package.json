@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "perform CRUD operations，API documentation and authentication",
   "main": "server.js",
+  "jest": {
+    "preset": "@shelf/jest-mongodb"
+  },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "test": "jest --watch --coverage",
     "start": "node server.js",
     "swagger": "node ./swagger.js"
   },
@@ -33,6 +36,7 @@
     "validatorjs": "^3.22.1"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^4.3.2",
     "jest": "^30.0.0",
     "supertest": "^7.1.1",
     "swagger-autogen": "^2.23.7"
