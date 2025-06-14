@@ -8,7 +8,6 @@
   "host": "https://tasktrackerapi-7nfh.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
