@@ -5,9 +5,19 @@ const passport = require("passport");
 const session = require("express-session");
 const GitHubStrategy = require("passport-github2").Strategy;
 const cors = require("cors");
+const taskRoutes = require('./routes/tasks.js');
+const userRoutes = require('./routes/users.js');
+const groupRoutes = require('./routes/groups.js');
+const goalRoutes = require('./routes/goals.js');
+
+const app = express();
+app.use('/api/tasks', taskRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/groups', groupRoutes);
+app.use('/api/goals', goalRoutes);
+
 
 const port = process.env.PORT || 3000;
-const app = express();
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
